@@ -54,6 +54,7 @@ jobs:
           mkdir macos-package
           cp wificom-update-installer.command macos-package/
           cp run.py macos-package/
+          cp update_tool_version.py macos-package/
           cp requirements.txt macos-package/
           zip -r macos-wificom-update-installer.zip macos-package/
 
