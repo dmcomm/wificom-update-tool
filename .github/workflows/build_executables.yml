@@ -22,12 +22,8 @@ jobs:
         uses: actions/checkout@v2.4.2
 
       - name: Add version to run.py
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "UPDATE_TOOL_VERSION = None"
-          replace: "${{ github.ref }}"
-          regex: false
-          include: "run.py"
+        run: |
+          echo UPDATE_TOOL_VERSION = "${{ github.ref }}" >> run.py
 
       - name: Set up Python
         uses: actions/setup-python@v3.1.0
