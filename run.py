@@ -11,7 +11,10 @@ import tempfile
 import webbrowser
 import zipfile
 
-UPDATE_TOOL_VERSION = None
+try:
+    from update_tool_version import UPDATE_TOOL_VERSION
+except ImportError:
+    UPDATE_TOOL_VERSION = None
 
 def read_circuitpython_version_from_boot_out(drive_path):
     try:
