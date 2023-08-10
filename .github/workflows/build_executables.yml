@@ -23,7 +23,9 @@ jobs:
 
       - name: Add version to run.py
         run: |
-          echo UPDATE_TOOL_VERSION = "${{ github.ref }}" >> run.py
+          echo UPDATE_TOOL_VERSION = \" >> run.py
+          git describe --tags >> run.py
+          echo \" >> run.py
 
       - name: Set up Python
         uses: actions/setup-python@v3.1.0
